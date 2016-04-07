@@ -1,0 +1,77 @@
+streaming_sites:
+  - id: nico
+    name: ニコニコ生放送
+    url: http://live.nicovideo.jp/ranking
+    channel_list_url: http://live.nicovideo.jp/recent/rss?p=
+    page_no: 1
+    default_setting: -10000
+
+  - id: nico_official
+    name: ニコニコ生放送（公式＆CH番組）
+    url: http://live.nicovideo.jp
+    channel_list_url: http://live.nicovideo.jp/ranking
+    page_no:
+    default_setting: -10000
+
+  - id: twicas
+    name: ツイキャス
+    url: http://twitcasting.tv
+    channel_list_url: http://api.twitcasting.tv/api/hotlist?count=100&type=json&lang=ja&from=
+    page_no: 0
+    default_setting: -10000
+
+  - id: fc2
+    name: FC2ライブ
+    url: http://live.fc2.com
+    channel_list_url: http://live.fc2.com/contents/allchannellist.php
+    page_no:
+    default_setting: -10000
+
+  - id: fc2_adult
+    name: FC2ライブ アダルト
+    url: http://live.fc2.com/adult
+    channel_list_url: http://live.fc2.com/adult/contents/allchannellist.php
+    page_no:
+    default_setting: x
+
+  - id: youtube
+    name: YouTube ライブ
+    url: https://www.youtube.com/live?gl=JP&hl=ja
+    channel_list_url: https://www.googleapis.com/youtube/v3/search?part=snippet&eventType=live&type=video&order=viewCount&regionCode=JP&maxResults=50
+    page_no:
+    default_setting: -30000
+
+  - id: himast
+    name: ひまわりストリーム
+    url: http://himast.in
+    channel_list_url: http://himast.in/?mode=program&cat=search&st_status=1&rss=1&page=
+    page_no: 0
+    default_setting: 1
+
+  - id: livetube
+    name: Livetube
+    url: https://livetube.cc
+    channel_list_url: https://livetube.cc/index.live.json
+    page_no:
+    default_setting: -10000
+
+  - id: ladio
+    name: ねとらじ
+    url: http://ladio.net
+    channel_list_url: http://yp.ladio.net/stats/list.v2.dat
+    page_no:
+    default_setting: -10000
+
+  - id: ust
+    name: USTREAM
+    url: http://www.ustream.tv
+    channel_list_url: http://api.ustream.tv/json/channel/live/search/all?limit=100
+    page_no: 1
+    default_setting: x
+
+  - id: afreecatv
+    name: アフリカTV
+    url: http://www.afreecatv.jp
+    channel_list_url: http://live.afreecatv.jp
+    page_no:
+    default_setting: -10000

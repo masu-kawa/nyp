@@ -1,0 +1,2 @@
+<% channels.each do |ch| %><%= ch['channel_name'] %><>00000000000000000000000000000000<><%= ch['tip'] %><><%= ch['contact_url'] %><><%= ch['genre'] %><><%= ch['detail'] %><><%= listener_count_by_setting_value(ch['listener_count'], params[ch['site_id']]) %><><%= ch['relay_count'] %><>0<><%= ch['file_type'] %><><><><><><><%= ch['time'] %><>click<><%= ch['comment'] %><>0
+<% end %>

@@ -1,0 +1,8 @@
+/log/*
+/tmp/*
+!.keep
+
+*.sqlite3
+
+/config/*
+!data.yml

@@ -1,0 +1,32 @@
+<div class="section">
+  <h2 id="netradio">ねとらじを自前のプレイヤーで開く方法</h2>
+  ここではペカレコのツールメニューからWindows Media Playerでねとらじを聞く方法を記載します<br>
+  mp3以外は聞けないみたいなので設定方法が分かる方は教えて下さい<br>
+  <ol>
+    <li>ペカレコの設定画面を開く</li>
+    <li>
+      ツールタブを下の画像のような感じに設定する<br>
+      ※ ここでは引数を <strong>/play "http://$2.m3u"</strong> WMPの場所を <strong>C:\Program Files (x86)\Windows Media Player\wmplayer.exe</strong><br>
+      としてますが環境や好みに合わせて設定して下さい</br>
+      <p><a href="images/netradio1.png"><img src="./images/netradio1.png" style="max-width:500px;"></a></p>
+
+    </li>
+    <li>
+      ねとらじ(mp3)の放送を右クリメニューのツールから開く<br>
+      <p><a href="images/netradio2.png"><img src="./images/netradio2.png" style="max-width:500px;"></a></p>
+    </li>
+  </ol>
+</div>
+
+<div class="section">
+  <h2 id="pecareco">ペカレコの無視タブにこのYPの特定のチャンネルのみ表示する方法</h2>
+  <ol>
+    <li>ペカレコのフィルタタブを開く</li>
+    <li>追加ボタンを押す</li>
+    <li>上部の「名前/処理」無視にチェック</li>
+    <li>検索の対象2 YPURLにチェックを入れて、このURL（<%= request.scheme + '://' + request.host %>）を入力</li>
+    <li>これでniconama-ypのチャンネルはすべて無視タブに入ります</li>
+    <li>次に無視リストの中から表示したい物のみを<br>さっき作った無視フィルタよりも優先度の高いフィルタに追加します。</li>
+    <li>以上で特定のチャンネルのみリストに表示出来ます。</li>
+  </ol>
+</div>
