@@ -4,7 +4,7 @@ require File.expand_path('./lib/db/sqlite_manager')
 
 class NYP < Sinatra::Base
   SITE_NAME = 'ニコ生などの配信サイトをYP表示' unless defined?(SITE_NAME)
-  SITE_LIST = ['nico', 'nico_official', 'twicas', 'fc2', 'fc2_adult', 'youtube', 'himast', 'livetube', 'ladio', 'ust', 'afreecatv'] unless defined?(SITE_LIST)
+  SITE_LIST = ['nico', 'nico_official', 'twicas', 'fc2', 'fc2_adult', 'youtube', 'himast', 'livetube', 'ladio', 'ust', 'afreecatv', 'twitchjp'] unless defined?(SITE_LIST)
 
   configure :development do
     register Sinatra::Reloader
@@ -19,7 +19,7 @@ class NYP < Sinatra::Base
   end
 
   # get(SITE_LIST.inject('') {|p, s| p << '/:' << s} << '/*.*') do
-  get '/:nico/:nico_official/:twicas/:fc2/:fc2_adult/:youtube/:himast/:livetube/:ladio/:ust/:afreecatv/index.txt', provides: 'txt' do
+  get '/:nico/:nico_official/:twicas/:fc2/:fc2_adult/:youtube/:himast/:livetube/:ladio/:ust/:afreecatv/:twitchjp/index.txt', provides: 'txt' do
     site_ids = []
     SITE_LIST.each do |site_name|
       # x以外の文字にマッチ
@@ -40,7 +40,7 @@ class NYP < Sinatra::Base
 
   get '/*' do
     # file_type無いとpcyp表示されない
-    error_message = ["channel_name" => "ERROR", "detail" => "ERROR", "contact_url" => "", "file_type" => "WMV"]
+    error_message = ["channel_name" => "ERROR", "detail" => "ERROR", "contact_url" => "http://nyp.orz.hm:25780/", "file_type" => "WMV"]
     erb :index, layout: false, locals: { channels: error_message }
   end
 
@@ -90,3 +90,7 @@ http://localhost:4567/1/0/0/0/0/0/0/0/index.txt?host=localhost:7144
 環境変数
 ENV['NYP_API_KEY_USTREAM']
 ENV['NYP_API_KEY_YOUTUBE']
+
+
+# お知らせ用
+ニコ生などの配信サイトをYP表示<>00000000000000000000000000000000<><>http://nyp.orz.hm:25780<>【お知らせ】<>twich(日本語のみ)に対応しました。お手数ですがURLの変更をお願いします<>9999999<>9999999<>0<>WMV<><><><><><>00:00<>click<><>0
