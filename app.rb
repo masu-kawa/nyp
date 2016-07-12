@@ -4,7 +4,7 @@ require File.expand_path('./lib/db/sqlite_manager')
 
 class NYP < Sinatra::Base
   SITE_NAME = 'ニコ生などの配信サイトをYP表示' unless defined?(SITE_NAME)
-  SITE_LIST = ['nico', 'nico_official', 'twicas', 'fc2', 'fc2_adult', 'youtube', 'himast', 'livetube', 'ladio', 'ust', 'afreecatv', 'twitchjp'] unless defined?(SITE_LIST)
+  SITE_LIST = ['nico', 'nico_official', 'twicas', 'fc2', 'fc2_adult', 'youtube', 'himast', 'livetube', 'ladio', 'ust', 'afreecatv', 'twitch'] unless defined?(SITE_LIST)
 
   configure :development do
     register Sinatra::Reloader
@@ -19,7 +19,7 @@ class NYP < Sinatra::Base
   end
 
   # get(SITE_LIST.inject('') {|p, s| p << '/:' << s} << '/*.*') do
-  get '/:nico/:nico_official/:twicas/:fc2/:fc2_adult/:youtube/:himast/:livetube/:ladio/:ust/:afreecatv/:twitchjp/index.txt', provides: 'txt' do
+  get '/:nico/:nico_official/:twicas/:fc2/:fc2_adult/:youtube/:himast/:livetube/:ladio/:ust/:afreecatv/:twitch/index.txt', provides: 'txt' do
     site_ids = []
     SITE_LIST.each do |site_name|
       # x以外の文字にマッチ

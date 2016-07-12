@@ -1,6 +1,6 @@
 require File.expand_path('./lib/readers/channel_list_reader')
 
-class TwitchjpReader < ChannelListReader
+class TwitchReader < ChannelListReader
 
   def next_page_exists?
     if can_read_next_page?
@@ -30,7 +30,7 @@ class TwitchjpReader < ChannelListReader
   end
 
   def read_genre(row)
-    '【TwitchJP】' << row['game'].to_s # game title
+    "【Twitch(#{row['channel']['language']})】" + row['game'].to_s # game title
   end
 
   def read_detail(row)

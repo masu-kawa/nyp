@@ -76,9 +76,9 @@ streaming_sites:
     page_no:
     default_setting: -10000
 
-  - id: twitchjp
-    name: Twitch(日本)
+  - id: twitch
+    name: Twitch
     url: https://www.twitch.tv
-    channel_list_url: https://api.twitch.tv/kraken/streams?language=ja&limit=100&offset=
+    channel_list_url: https://api.twitch.tv/kraken/streams?limit=100&offset=
     page_no: 0
     default_setting: -10000
